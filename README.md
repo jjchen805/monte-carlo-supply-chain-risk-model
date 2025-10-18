@@ -28,10 +28,7 @@ Each supplier region (U.S., Mexico, China) has unique cost drivers — tariffs, 
 | **Tariff & Geopolitical Risk**       | Randomized based on policy and trade scenarios (e.g., USMCA compliance, Section 232).                                     | **Discrete categorical** |
 | **Logistics Volatility**             | Cost multiplier tied to transit days via log-linear σ; sampled lognormal for daily variation.                             | **Lognormal**            |
 
-Example:
-[
-σ = a + b\ln(T), \quad T=\text{transit days}
-]
+Example: $$\sigma = a + b \ln(T), \quad T = \text{(transit days)}$$
 
 ---
 
