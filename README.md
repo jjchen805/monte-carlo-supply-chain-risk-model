@@ -83,20 +83,20 @@ $$
 \sigma(x) = \frac{1}{1 + e^{-x}}
 $$
 
-- $\A_s$: Automation level  
-- $\H_s$: Workforce skill / human capital  
-- $\M_s$: Manufacturing maturity  
+- $A_s$: Automation level  
+- $H_s$: Workforce skill / human capital  
+- $M_s$: Manufacturing maturity  
 - $\beta_0, \beta_i$: Calibrated logistic weights (default –1.5, 2.2)
 - 
 
-This gives the expected yield $\mu_s\$, which parameterizes the Beta distribution:
+This gives the expected yield $\mu_s$, which parameterizes the Beta distribution:
 
 $$
 \alpha = \mu_s \nu, \qquad 
 \beta = (1 - \mu_s)\nu
 $$
 
-where $\nu\$ controls variance (higher $\nu\$ = more stable process).
+where $\nu$ controls variance (higher $\nu$ = more stable process).
 
 ---
 
@@ -124,7 +124,7 @@ $$
 C_{\text{log}} = C_{\text{base}} \, \exp(\mu + \sigma Z), \qquad Z \sim N(0, 1)
 $$
 
-with $\mu = -0.5\sigma^2\$ so that $E[C] \approx C_{\text{base}}\$.  
+with $\mu = -0.5\sigma^2\$ so that $E[C] \approx C_{\text{base}}$.  
 \(\sigma\) grows with **transit days (T)** by a log-linear rule:
 
 $$
