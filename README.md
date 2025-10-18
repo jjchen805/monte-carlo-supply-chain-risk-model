@@ -28,8 +28,6 @@ Each supplier region (U.S., Mexico, China) has unique cost drivers — tariffs, 
 | **Tariff & Geopolitical Risk**       | Randomized based on policy and trade scenarios (e.g., USMCA compliance, Section 232).                                     | **Discrete categorical** |
 | **Logistics Volatility**             | Cost multiplier tied to transit days via log-linear σ; sampled lognormal for daily variation.                             | **Lognormal**            |
 
-Example: $$\sigma = a + b \ln(T), \quad T = \text{(transit days)}$$
-
 ---
 
 ## Simulation Parameters
@@ -79,23 +77,24 @@ Example: $$\sigma = a + b \ln(T), \quad T = \text{(transit days)}$$
 
 Production yield during ramp-up affects unit cost significantly. Instead of assigning ad-hoc probabilities, yield is derived from **site maturity attributes**:
 
-[
-\mu_s = \sigma(\beta_0 + \beta_A A_s + \beta_H H_s + \beta_M M_s),
-\quad \sigma(x) = \frac{1}{1+e^{-x}}
-]
+$$
+\mu_s = \sigma(\beta_0 + \beta_A A_s + \beta_H H_s + \beta_M M_s), \quad 
+\sigma(x) = \frac{1}{1 + e^{-x}}
+$$
 
-* (A_s): Automation level
-* (H_s): Workforce skill/human capital
-* (M_s): Manufacturing maturity
-* (\beta_0, \beta_i): Calibrated logistic weights (default –1.5, 2.2)
+- \(A_s\): Automation level  
+- \(H_s\): Workforce skill / human capital  
+- \(M_s\): Manufacturing maturity  
+- \(\beta_0, \beta_i\): Calibrated logistic weights (default –1.5, 2.2)
 
-This gives the expected yield (\mu_s), which parameterizes the **Beta(α, β)** distribution:
+This gives the expected yield \(\mu_s\), which parameterizes the Beta distribution:
 
-[
-\alpha = \mu_s\nu,\qquad \beta = (1-\mu_s)\nu
-]
+$$
+\alpha = \mu_s \nu, \qquad 
+\beta = (1 - \mu_s)\nu
+$$
 
-where (ν) controls variance (higher ν = more stable process).
+where \(\nu\) controls variance (higher \(\nu\) = more stable process).
 
 ---
 
@@ -119,16 +118,16 @@ Probabilities reference **INA (2024)** and **USTR Section 232** trade outlooks.
 
 Shipping-cost volatility is modeled as a **lognormal multiplier** on base logistics cost:
 
-[
-C_{log} = C_{base},\exp(\mu + \sigma Z),\qquad Z\sim N(0,1)
-]
+$$
+C_{\text{log}} = C_{\text{base}} \, \exp(\mu + \sigma Z), \qquad Z \sim N(0, 1)
+$$
 
-with (\mu = -0.5\sigma^2) so that E[C] ≈ C₍base₎.
-σ grows with **transit days (T)** by a log-linear rule:
+with \(\mu = -0.5\sigma^2\) so that \(E[C] \approx C_{\text{base}}\).  
+\(\sigma\) grows with **transit days (T)** by a log-linear rule:
 
-[
-\sigma(T)=a+b\ln T,\qquad a=0.0185,;b=0.0454
-]
+$$
+\sigma(T) = a + b \ln(T), \qquad a = 0.0185, \; b = 0.0454
+$$
 
 Anchors: short-haul (≈2 days → σ≈0.05) vs. trans-Pacific (≈35 days → σ≈0.18).
 These align with volatility seen in **Freightos Baltic Index** and **Drewry WCI** 2023-2025.
