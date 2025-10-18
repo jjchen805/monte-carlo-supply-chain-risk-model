@@ -1,4 +1,5 @@
 # Monte Carlo Simulation for Global Headlamp Sourcing Risk (Tesla Supply Chain Case)
+This is an extended project to the Tesla case competition I participated with my team  **Big Motion** in October 2025. Shout out to my members John, Ethan, Robert, and Aivan.
 
 ## Overview
 
@@ -82,10 +83,12 @@ $$
 \sigma(x) = \frac{1}{1 + e^{-x}}
 $$
 
+$$
 - \(A_s\): Automation level  
 - \(H_s\): Workforce skill / human capital  
 - \(M_s\): Manufacturing maturity  
 - \(\beta_0, \beta_i\): Calibrated logistic weights (default –1.5, 2.2)
+$$
 
 This gives the expected yield \(\mu_s\), which parameterizes the Beta distribution:
 
@@ -94,7 +97,9 @@ $$
 \beta = (1 - \mu_s)\nu
 $$
 
-where \(nu\) controls variance (higher \(\nu\) = more stable process).
+$$
+where \(\nu\) controls variance (higher \(\nu\) = more stable process).
+$$
 
 ---
 
