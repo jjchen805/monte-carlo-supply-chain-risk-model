@@ -94,7 +94,7 @@ $$
 \beta = (1 - \mu_s)\nu
 $$
 
-where \(\nu\) controls variance (higher \(\nu\) = more stable process).
+where \(nu\) controls variance (higher \(\nu\) = more stable process).
 
 ---
 
