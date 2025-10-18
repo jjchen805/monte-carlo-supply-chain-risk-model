@@ -83,10 +83,10 @@ $$
 \sigma(x) = \frac{1}{1 + e^{-x}}
 $$
 
-- $\A_s\$: Automation level  
-- $\H_s\$: Workforce skill / human capital  
-- $\M_s\$: Manufacturing maturity  
-- $\beta_0, beta_i\$: Calibrated logistic weights (default –1.5, 2.2)
+- $\A_s$: Automation level  
+- $\H_s$: Workforce skill / human capital  
+- $\M_s$: Manufacturing maturity  
+- $\beta_0, \beta_i$: Calibrated logistic weights (default –1.5, 2.2)
 - 
 
 This gives the expected yield $\mu_s\$, which parameterizes the Beta distribution:
