@@ -129,7 +129,7 @@ $$
 \sigma(T) = a + b \ln(T), \qquad a = 0.0185, \; b = 0.0454
 $$
 
-Anchors: short-haul (≈2 days → σ≈0.05) vs. trans-Pacific (≈35 days → σ≈0.18).
+Anchors: short-haul (≈5 days → σ≈0.05) vs. trans-Pacific (≈32 days → σ≈0.18).
 These align with volatility seen in **Freightos Baltic Index** and **Drewry WCI** 2023-2025.
 
 ---
